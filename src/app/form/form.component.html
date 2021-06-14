@@ -1,0 +1,17 @@
+<sdds-textfield
+  type="text"
+  ngModel
+  ngDefaultControl
+  name="usernameInput"
+  #usernameInput="ngModel"
+  placeholder="Enter Username"
+  state="{{!usernameInput.untouched && !usernameInput.value ? 'error' : ''}}"
+  (click)="clickEvent()"
+  (customChange)="logNgModel(usernameInput)"
+>
+  <span
+    *ngIf="!usernameInput.untouched && !usernameInput.value"
+    slot="sdds-helper"
+    >Username required</span
+  >
+</sdds-textfield>
